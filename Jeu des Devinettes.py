@@ -4,13 +4,13 @@ import random
 #Définition des limites que peuvent atteindre le nombre avec une variable pour le refaire facilement.
 # Les input sont les deux questions pour le minimum puis pour le maximum. L'output est le nombre aléatoire qui sera décidé
 def borne():
-    print(" \nDéfinition des limites que peut atteindre le chiffre à deviner. \n")
-    global petit
-    petit = int(input("Le plus petit nombre (entier) peut être: \n"))
-    global grand
-    grand = int(input("Le plus grand nombre (entier) peut être: \n"))
+    print(" \nDéfinition des limites que peut atteindre le chiffre à deviner. ")
+    global minimum
+    minimum = int(input("\nLe plus petit nombre (entier) peut être: "))
+    global maximum
+    maximum = int(input("\nLe plus grand nombre (entier) peut être: "))
     global nombre
-    nombre = random.randint(petit, grand)
+    nombre = random.randint(minimum, maximum)
     # Définition de la variable pour compter le nombre d'essais
     global essai
     essai = 0
@@ -21,14 +21,14 @@ jeu = True
 
 #La boucle n'opèrera que si "jeu" est True, ce qui se fait tant que l'utilisateur dit oui à la possibilité de rejouer
 while jeu == True:
-    guess = int(input("À vous de deviner le nombre que j'ai choisi: \n"))
+    guess = int(input("\nÀ vous de deviner le nombre que j'ai choisi: "))
 
     #Félicitations à l'utilisteur lorsqu'il réussi
     if guess == nombre:
         essai += 1
-        bravo = f"Bravo, bonne réponse! Vous avez réussi en: {essai} essais"
+        bravo = f"\nBravo, bonne réponse! Vous avez réussi en: {essai} essai(s)"
         print(bravo)
-        encore = str(input("Voulez-vous rejouer? 'y' pour Oui et 'n' pour Non \n"))
+        encore = str(input("Voulez-vous rejouer? 'y' pour Oui et 'n' pour Non: "))
         if encore == "y" or encore == "Y":
             print("Recommençons!")
             borne()
