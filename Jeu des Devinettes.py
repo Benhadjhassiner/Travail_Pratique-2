@@ -5,7 +5,7 @@ import random
 # Les input sont les deux questions pour le minimum puis pour le maximum. L'output est le nombre aléatoire qui sera décidé
 def borne():
     print(" \nDéfinition des limites que peut atteindre le chiffre à deviner. ")
-    minimum = int(input("\nLe plus petit nombre (entier) peut être: ")
+    minimum = int(input("\nLe plus petit nombre (entier) peut être: "))
     maximum = int(input("\nLe plus grand nombre (entier) peut être: "))
     global nombre
     nombre = random.randint(minimum, maximum)
