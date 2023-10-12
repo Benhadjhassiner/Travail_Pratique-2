@@ -5,19 +5,16 @@ import random
 # Les input sont les deux questions pour le minimum puis pour le maximum. L'output est le nombre aléatoire qui sera décidé
 def borne():
     print(" \nDéfinition des limites que peut atteindre le chiffre à deviner. ")
-    global minimum
-    minimum = int(input("\nLe plus petit nombre (entier) peut être: "))
-    global maximum
+    minimum = int(input("\nLe plus petit nombre (entier) peut être: ")
     maximum = int(input("\nLe plus grand nombre (entier) peut être: "))
     global nombre
     nombre = random.randint(minimum, maximum)
-    # Définition de la variable pour compter le nombre d'essais
-    global essai
-    essai = 0
+    
 
 borne()
 
 jeu = True
+essai = 0
 
 #La boucle n'opèrera que si "jeu" est True, ce qui se fait tant que l'utilisateur dit oui à la possibilité de rejouer
 while jeu == True:
@@ -32,6 +29,7 @@ while jeu == True:
         if encore == "y" or encore == "Y":
             print("Recommençons!")
             borne()
+            essai = 0
         else:
             print("Au revoir.")
             jeu = False
